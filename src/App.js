@@ -5,6 +5,8 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import { Routes, Route } from "react-router-dom"
 import Offers from './pages/Offers';
+import OffersDetails from './pages/OffersDetails';
+import BookLabTest from './pages/BookLabTest';
 
 function App() {
   return (
@@ -21,6 +23,20 @@ function App() {
           element={
             <Main>
               <Offers />
+            </Main>
+          }
+        />
+          <Route path="offersdetails"
+          element={
+            <Main>
+              <OffersDetails />
+            </Main>
+          }
+        />
+        <Route path="lab%20test"
+          element={
+            <Main>
+              <BookLabTest />
             </Main>
           }
         />

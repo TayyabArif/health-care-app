@@ -7,14 +7,14 @@ import Footer from "../components/Footer";
 
 const Main = ({ children }) => {
   return (
-    <Grid container direction="column" spacing={1} >
+    <Grid container direction="column" spacing={1} sx={{ bgcolor: '#eeeee4'}} >
       <Grid item flex={2} sx={{ height: "20%" }}>
         <Header />
       </Grid>
-      <Grid item flex={8} sx={{ height: "60%", width: "100%" }}>
+      <Grid item flex={8} sx={{ height: "60%", width: "100%" , bgcolor: 'white'}}>
         {children}
       </Grid>
-      <Grid item flex={1} sx={{ height: '20%' }}>
+      <Grid item flex={1} sx={{ height: '20%'}}>
         <Divider light={true} />
         <Footer />
       </Grid>

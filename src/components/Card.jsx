@@ -8,13 +8,7 @@ import Typography from '@mui/material/Typography';
 
 export default function DataCard() {
   return (
-    <Card sx={{ maxWidth: 190, mr: 2}}>
-      <CardMedia
-        component="img"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
-      />
+    <Card sx={{ maxWidth: 220, mr: 3}}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Lizard

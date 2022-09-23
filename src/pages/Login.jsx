@@ -4,13 +4,17 @@ import LoginForm from '../components/LoginForm'
 
 const Login = () => {
   return (
-   <Box component="div" sx={{ height: '100%', width:'100%' }}>
+   <Box component="div" sx={{ height: '100%', width:'100%'}}>
     <Grid container sx={{ height: '100%', width:'100%' }} alignItems="center"  justifyContent='space-between' >
-      <Grid container item sx={{ height: '100%', width:'50%' , bgcolor: 'red'}} alignItems="center" justifyContent="center">
+      <Grid container item sx={{ height: '100%', width:'50%' }} alignItems="center" justifyContent="center">
         <Typography>
            (Logo)
         </Typography>
-        <Typography>
+        <Typography
+        variant='h3'
+        color= 'primary.main'
+        fontFamily= 'Fantasy'
+        >
            Health Care
         </Typography>
       </Grid>
