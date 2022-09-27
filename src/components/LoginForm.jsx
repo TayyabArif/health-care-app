@@ -38,7 +38,7 @@ export default function LoginForm() {
   }, []);
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" sx={{ ml: '0px', mr: '0px'}}>
       <CssBaseline />
       <Box
         sx={{
@@ -50,12 +50,22 @@ export default function LoginForm() {
           bgcolor: "rgba(255,255,255, 0.8)",
           borderRadius: "10px",
           borderColor: "primary.light",
+          width: '45vw',
+          mb: 2,
+          mt: 4
+
         }}
       >
-         <Typography component="h1" variant="h5">
+         <Typography component="h1" variant="h5"  fontSize="1.2rem"
+          fontWeight="120px"
+          fontFamily="Fantasy"
+          sx={{mb: 2}}>
           Welcome to Health Care
         </Typography>
-        <Typography component="h1" variant="h5" sx={{width: "50%"}}>
+        <Typography component="h1" variant="h5" sx={{width: "50%"}} fontWeight='bold' 
+        color='primary.main'
+        fontSize="1.8rem"
+        >
           Log in to your account
         </Typography>
         <Box component="form" ref={form} onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -68,6 +78,7 @@ export default function LoginForm() {
             name={email}
             autoComplete="email"
             type="email"
+            focused
             error={errors == null ? false : true}
             helperText={errors == null ? ' ' : 'Email is not valid'}
             autoFocus

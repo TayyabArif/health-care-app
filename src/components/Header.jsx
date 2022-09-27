@@ -18,6 +18,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PersonIcon from '@mui/icons-material/Person';
+import MenuItems from './Menu';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const pages = ['My Products', 'Pricing', 'Blog'];
 const settings = ['Login'];
@@ -42,11 +44,11 @@ const Header = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{bgcolor: 'white', py: 1}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
             href="/"
@@ -56,12 +58,11 @@ const Header = () => {
               fontFamily: 'monospace',
               fontWeight: 700,
               fontStyle: 'italic',
-              letterSpacing: '.3rem',
-              color: 'inherit',
               textDecoration: 'none',
+              color: 'primary.main'
             }}
           >
-            Healt Care
+            Health Care
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -111,7 +112,7 @@ const Header = () => {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -125,27 +126,28 @@ const Header = () => {
             >
               Home
             </Button>
+            {/* <MenuItems /> */}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Grid container direction="row" justifyContent="space-between" sx={{ width: "100%" }} alignItems="center">
                 <Button
+                  variant= 'contained'
                   onClick={() => navigate('/login')}
-                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'red' }}
+                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'danger.main', 
+                  mx: 1, fontSize: '0.5px', borderRadius: '5px', color: 'white' }}
+                  size= 'small'
                 >
                   <PhoneIcon /> 
                 </Button>
               <Grid item>
-                {/* <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'red' }}>
-                    <Avatar src={image} alt="Remy Sharp" />
-                  </IconButton>
-                </Tooltip> */}
                 <Tooltip title="Open settings">
                  <Button
+                 variant = 'outlined'
                   onClick={handleOpenUserMenu}
-                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'red' }}
+                  sx={{ my: 2, color: 'danger.main', display: 'block', fontSize: '1.5x', borderColor: 'danger.main' }}
                 >
                   <PersonIcon /> 
+                  <ArrowDropDownIcon />
                 </Button>
                 </Tooltip> 
                 <Menu

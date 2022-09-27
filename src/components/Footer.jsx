@@ -1,17 +1,19 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import Divider from '@mui/material/Divider';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { Grid, Stack } from '@mui/material';
+import { Button, Grid, Stack } from '@mui/material';
+import Advantages from './Advantages';
+import { footerfirstdata } from '../footerfirst';
+import { Divider } from "@material-ui/core";
+import { footerpolicies } from '../footerpolicies';
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
+      {'Copyright © 2015-2022 health care Pvt. Ltd. - All Rights Reserved'}
       <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link>{' '}
@@ -23,70 +25,30 @@ function Copyright() {
 
 function Footer() {
   return (
-    <Box component='div' sx={{ mt: 3 ,width: "100%"}}>
-      <Grid container direction="column" justifyContent="space-between" alignItems="center" sx={{ backgroundColor: 'primary.light', py: 6 , width: "100%", height: "80%"}}>
-          <Grid container item justifyContent="space-arround" alignItems="center">
-            <Grid item sx={{width: "25%"}}>
-              POPULAR Features
-              <Stack spacing={2}>
-                <Typography
-                  variant="subtitle1"
-                  align="left"
-                  color="text.secondary"
-                  component="p"
-                >
-                  Consinement Clearance
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  align="left"
-                  color="text.secondary"
-                  component="p"
-                >
-                  Custom Checking
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  align="left"
-                  color="text.secondary"
-                  component="p"
-                >
-                  Easy to manage
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  align="left"
-                  color="text.secondary"
-                  component="p"
-                >
-                  Clear Duties
-                </Typography>
-              </Stack>
-            </Grid>
-            <Grid item sx={{width: "50%"}} >
-            <Typography
-                  variant="subtitle1"
-                  align="left"
-                  color="text.secondary"
-                  component="p"
-                >
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                  Distinctio omnis quo fuga aliquid tempore, incidunt assumenda 
-                  maxime odio reprehenderit debitis commodi aperiam. Dolorem totam 
-                  eaque qui neque officiis expedita accusamus?
-                </Typography>
-            </Grid>
-            <Grid item sx={{width: "25%"}} alignSelf= "center" >
-              <Stack direction='row' spacing={2}>
-                <FacebookIcon />
-                <InstagramIcon />
-                <TwitterIcon />
-              </Stack>
-            </Grid>
-          </Grid>
-          <Grid item sx={{height: "20%"}}>
-            <Copyright />
-          </Grid>
+    <Box component='div' sx={{ width: "100%", height: '100%', p: 0 }}>
+      <Grid container direction="column" sx={{ backgroundColor: 'primary.main', width: "100%", height: "100%" }} justifyContent='center' alignItems='center'>
+        <Grid container item sx={{ height: "23%", width: '100%', mt: '2%' }} alignItems='center'>
+          {footerfirstdata.map(data => {
+            return (
+              <Advantages data={data} />
+            )
+          })}
+        </Grid>
+        <Grid container item sx={{ height: "25%", width: '100%' }}>
+          <Divider />
+        </Grid>
+        <Grid container item sx={{ height: "25%", width: '100%' }}>
+          {footerpolicies.map(data => {
+            return(
+              <Button variant="text" sx={{ color: 'white' }}>
+                {data}
+                </Button>
+            )
+          })}
+        </Grid>
+        <Grid constaineritem sx={{ height: "25%", width: '100%' }}>
+          <Copyright />
+        </Grid>
       </Grid>
     </Box>
   );
