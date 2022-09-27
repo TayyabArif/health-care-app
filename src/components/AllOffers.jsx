@@ -6,13 +6,19 @@ import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlin
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import TransitionsModal from '../components/Modal';
+import styled from 'styled-components'
 
+const Image = styled.img`
+height: 110px;
+width: 180px;
+border-radius: 50%; 
+`
 const AllOffers = () => {
   return (
-    <Grid container item sx={{ width: '99%', height: '30%', bgcolor: '#f8f8ff', pt: 1, mt: 1 }} justifyContent='space-between'>
+    <Grid container item sx={{ width: '99%', height: '30%', bgcolor: 'white', pt: 1, mt: 1 }} justifyContent='space-between'>
       <Grid container item sx={{ width: '50%' }}>
-        <Grid item sx={{ width: '30%', ml: 2 }}>
-          Picture
+        <Grid item sx={{ width: '30%', ml: 2 }} >
+        <Image src="https://s3.ap-south-1.amazonaws.com/static.marham.pk/assets/deals/60/1200-everythinglasik-istock-652420374-1024x672-1-99.jpg" />
         </Grid>
         <Grid container item direction='column' sx={{ width: '60%', ml: 3 }}>
           <Link>
@@ -82,7 +88,7 @@ const AllOffers = () => {
       </Grid>
       <Grid container item direction='column' sx={{ width: '50%', pl: 50, pr: 2 }}>
         <TransitionsModal name={'Call Helpline'} />
-        <Button variant="contained" sx={{ mt: 2 }}>View Details</Button>
+        <Button variant="contained" sx={{ mt: 2 ,color: 'white', backgroundColor: 'danger.main'}}>View Details</Button>
       </Grid>
     </Grid>
   )

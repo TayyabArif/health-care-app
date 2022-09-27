@@ -9,10 +9,13 @@ import { Grid } from '@mui/material';
 
 export default function OffersDetailsCard() {
     return (
-        <Card sx={{ maxWidth: '50%', mr: 2 }}>
+        <Card sx={{ minWidth: 400, mr: 2 }}>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    LASIK Microkeratome
+                <Typography
+                 fontSize='1.3rem'
+                 fontWeight = 'bold'
+                 color='primary.main'>
+                LASIK Microkeratome
                 </Typography>
                 <Grid container direction='column'>
                 <Grid container item sx={{mt: 1, mb: 1}} justifyContent='space-between'>
@@ -30,7 +33,7 @@ export default function OffersDetailsCard() {
                 </Grid>
             </CardContent>
             <CardActions>
-            <Button variant="outlined" sx={{mt: 2, width: '100%'}}>Book Now</Button>
+            <Button variant="outlined" sx={{mt: 2, width: '100%', color: 'danger.main', borderColor: 'danger.main'}}>Book Now</Button>
             </CardActions>
         </Card>
     );

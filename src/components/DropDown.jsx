@@ -19,7 +19,7 @@ export default function DropDown() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: '90%', mt: 3 }}>
+      <FormControl sx={{ m: 1, width: '90%', mt: 3 , bgcolor: '#f2f2f2'}}>
         <Select
           displayEmpty
           value=''

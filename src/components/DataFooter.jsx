@@ -56,7 +56,7 @@ const topspecialities = [
 ]
 const DataFooter = () => {
     return (
-        <Grid container sx={{ bgcolor: 'darkblue' , height: '100%', width: '100%', pl: 15 }} >
+        <Grid container sx={{ bgcolor: '#014e78' , height: '100%', width: '100%', pl: 15 }} >
             <Grid container item sx={{ width: '25%', height: '100%' , mt: 5}}>
                 <Grid container item sx={{width: '70%', height: '30%', pt: 5}} justifyContent= 'space-evenly'>
                    <Button  variant = 'contained' sx={{width: '5px',height: '30px' ,p: 0, backgroundColor: "rgba(255,255,255, 0.6)", }}>

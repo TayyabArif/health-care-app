@@ -26,7 +26,7 @@ function Copyright() {
 function Footer() {
   return (
     <Box component='div' sx={{ width: "100%", height: '100%', p: 0 }}>
-      <Grid container direction="column" sx={{ backgroundColor: 'primary.light', width: "100%", height: "100%" }} justifyContent='center' alignItems='center'>
+      <Grid container direction="column" sx={{ backgroundColor: 'primary.main', width: "100%", height: "100%" }} justifyContent='center' alignItems='center'>
         <Grid container item sx={{ height: "23%", width: '100%', mt: '2%' }} alignItems='center'>
           {footerfirstdata.map(data => {
             return (

@@ -7,6 +7,8 @@ import { Routes, Route } from "react-router-dom"
 import Offers from './pages/Offers';
 import OffersDetails from './pages/OffersDetails';
 import BookLabTest from './pages/BookLabTest';
+import OnlineConsultation from './pages/OnlineConsultation';
+import Queries from './pages/Queries';
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
             </Main>
           }
         />
-          <Route path="offersdetails"
+        <Route path="offersdetails"
           element={
             <Main>
               <OffersDetails />
@@ -37,6 +39,20 @@ function App() {
           element={
             <Main>
               <BookLabTest />
+            </Main>
+          }
+        />
+        <Route path="online-consultation"
+          element={
+            <Main>
+              <OnlineConsultation />
+            </Main>
+          }
+        />
+        <Route path="help-me"
+          element={
+            <Main>
+              <Queries />
             </Main>
           }
         />

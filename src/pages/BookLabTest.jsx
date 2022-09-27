@@ -5,54 +5,51 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/material/Button';
 import AllOffers from '../components/AllOffers';
 import DropDown from '../components/DropDown';
-import TransitionsModal from '../components/Modal';
 import Help from '../components/Help';
+import styled from 'styled-components'
+import FAQ from '../components/FAQ';
+
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    width: inherit;
+`
 
 const BookLabTest = () => {
   return (
-    <Grid container item direction='column' sx={{ width: '100%', height: '100%' }} alignItems="center" justifyContent='space-between'>
-      <Grid item sx={{ bgcolor: 'blue', height: '10%', width: '100%' }}>
-        Poster
+    <Grid container item direction='column' sx={{ width: '100%', height: '100%', bgcolor: '#eeeee4' }} alignItems="center" justifyContent='space-between'>
+      <Grid item sx={{ height: '10%', width: '100%' }}>
+        <Image src="https://static.marham.pk/assets/labs/2/banner.jpg" onerror="this.onerror=null; this.src='https://static.marham.pk/assets/images/labs/banner.jpg'" alt="Chughtai Lab's Picture" />
       </Grid>
-      <Grid container item sx={{ width: '90%', height: '4%', bgcolor: 'green', mb: '1%' }} alignItems='center'>
-        <Button variant="text" sx={{ color: 'black' }}>Home</Button>
+      <Grid container item sx={{ width: '90%', height: '4%', bgcolor: 'white', mb: '1%',  mt: 1, p: 1 }} alignItems='center'>
+        <Button variant="text" sx={{ color: 'black', fontSize: '0.8rem' }}>Home</Button>
         <KeyboardArrowRightIcon />
-        <Button variant="text" sx={{ color: 'black' }}>Labs in Pakistan</Button>
+        <Button variant="text" sx={{ color: 'black', fontSize: '0.8rem' }}>Labs in Pakistan</Button>
         <KeyboardArrowRightIcon />
-        <Button variant="text" sx={{ color: 'black' }}>Labs in Lahore</Button>
+        <Button variant="text" sx={{ color: 'black', fontSize: '0.8rem' }}>Labs in Lahore</Button>
         <KeyboardArrowRightIcon />
-        <Typography>
+        <Typography
+        fontSize = '0.8rem'>
           Chughtai Lab
         </Typography>
       </Grid>
-      <Grid container item sx={{ bgcolor: 'green', width: '90%', height: '10%' }}>
+      <Grid container item sx={{ bgcolor: 'white', width: '90%', height: '10%' }}>
         <AllOffers />
       </Grid>
       <Grid sx={{ bgcolor: 'yellow', height: '15%' }}>
         4
       </Grid>
-      <Grid container item direction='column' sx={{ bgcolor: 'cyan', height: '15%' }}>
-        <Grid container item sx={{ height: '30%' }} justifyContent='space-between' alignItems='center'>
-          <Grid container item direction='column' sx={{ height: '100%', width: '70%' }}>
-            <Typography>
-              Frequently Asked Questions
-            </Typography>
-            <Typography>
-              10 Million+ People Have Used MARHAM!
-            </Typography>
-          </Grid>
-          <Grid container item sx={{ height: '100%', width: '30%', pl: '15%' }}>
-            <TransitionsModal name={'Call Helpline'} />
-          </Grid>
-        </Grid>
-        <Grid container item direction='column' sx={{ height: '70%' }} >
-          <DropDown />
-          <DropDown />
-          <DropDown />
-        </Grid>
+      <Grid container item direction='column' sx={{ bgcolor: 'white', height: '15%',width: '90%',p: 3, mb: '1%' }}>
+        <FAQ />
       </Grid>
-      <Grid container item direction='column' sx={{ bgcolor: 'pink', height: '10%' }}>
-        <Typography>
+      <Grid container item direction='column' sx={{ bgcolor: 'white',width: '90%', height: '10%', p: 3, mb: '1%' }}>
+        <Typography
+        fontSize='1.4rem'
+        fontWeight = 'bold'
+        color='primary.main'
+        fontFamily = 'Consolas'
+        sx={{mb: 2}}
+        >
           About Chughtai Lab
         </Typography>
         <Typography>
@@ -62,34 +59,42 @@ const BookLabTest = () => {
           It is providing services in various domains including all lab tests, CT Scan, ECG, X-Ray, CBC, 25 Hydroxyvitamin D, Blood Glucose Random, HBsAg, Anti HCV, CBC, Cholesterol, Triglycerides, HDL Cholesterol, LDL Cholesterol, Non – HDL Cholesterol, Creatinine (Serum), PSA Total, Glucose, HbA1c, Microalbuminuria,  CRP (High Sensitivity), hemoglobin A1C, liver function test, kidney function test, urine function test, pregnancy test, Blood Test, Cholesterol Test, liver function test, kidney function test, Urine function test, Blood Sugar Test, Uric Acid, etc
         </Typography>
       </Grid>
-      <Grid container item direction='column' sx={{ bgcolor: 'blue', height: '5%' }} justifyContent='center' alignItems='center'>
+      <Grid container item direction='column' sx={{ bgcolor: 'white',width: '90%', height: '5%', mb: '1%', p: 3 }} justifyContent='center' alignItems='center'>
         <Help />
       </Grid>
-      <Grid container item direction='column' sx={{ bgcolor: 'yellow', height: '10%', widht: '100%' }}>
+      <Grid container item direction='column' sx={{ bgcolor: 'white', width: '90%', height: '10%',mb: '1%', p: 3  }}>
         <Grid container item sx={{ width: '100%', height: '20%' }}>
-        Other labs in Lahore
+        <Typography
+        fontSize='1.4rem'
+        fontWeight = 'bold'
+        color='primary.main'
+        fontFamily = 'Consolas'
+        sx={{mb: 2}}
+        >
+          Other labs in Lahore
+        </Typography>
         </Grid>
         <Grid container item sx={{ width: '100%', height: '79%', mt: '1%' }}>
           <Grid container item sx={{ width: '25%', height: '100%' }}>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
           </Grid>
           <Grid container item sx={{ width: '25%', height: '100%' }}>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore Chughtai Lab in Lahore </Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore Chughtai Lab in Lahore </Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
           </Grid>
           <Grid container item sx={{ width: '25%', height: '100%' }}>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
           </Grid>
           <Grid container item sx={{ width: '25%', height: '100%' }}>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
-          <Link sx={{mb: 1}}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
+            <Link sx={{ mb: 1 }}>Chughtai Lab in Lahore</Link>
           </Grid>
         </Grid>
 

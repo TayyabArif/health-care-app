@@ -15,7 +15,7 @@ const Offers = () => {
   return (
     <Box component="div" sx={{ height: '100%', width: '100%' , bgcolor: '#eeeee4'}}>
       <Grid container direction='column' sx={{ height: '100%', width: '100%' }} alignItems="center" justifyContent='space-between' >
-        <Grid container item direction='column' sx={{ width: '100%', height: '24%', bgcolor: 'darkblue', pt: 5, pb: 5, mb: '1%' }} alignItems="center" justifyContent='center'>
+        <Grid container item direction='column' sx={{ width: '100%', height: '24%', bgcolor: '#014e78', pt: 5, pb: 5, mb: '1%' }} alignItems="center" justifyContent='center'>
           <Typography
           fontSize='2rem'
           fontWeight = 'bold'
@@ -49,13 +49,15 @@ const Offers = () => {
         </FormControl>
         </Grid>
         <Grid container item sx={{ width: '99%', height: '9%', bgcolor: '#f8f8ff', mb: '1%' }} alignItems='center'>
-          <Button variant="text" sx={{ color: 'black' }}>Home</Button>
+          <Button variant="text" sx={{ color: 'black',  fontSize: '0.8rem' }}>Home</Button>
           <KeyboardArrowRightIcon sx={{color: 'primary.main'}}/>
-          <Typography>
+          <Typography 
+          fontSize='0.9rem'
+          >
             Special offers
           </Typography>
         </Grid>
-        <Grid container item direction='column' sx={{ width: '99%', height: '24%', bgcolor: '#f8f8ff', mb: '1%', p: 2 }}>
+        <Grid container item direction='column' sx={{ width: '99%', height: '49%', bgcolor: '#f8f8ff', mb: '1%', p: 2 }}>
           <Typography
           fontSize='1.5rem'
           fontWeight = 'bold'
@@ -64,7 +66,7 @@ const Offers = () => {
           >
             Most view Details
           </Typography>
-          <Grid container item sx={{ width: '100%', height: '25%', mt: 1, mb: 1}}>
+          <Grid container item sx={{ width: '100%', height: '25%', mt: 1, mb: 1, bgcolor: 'white'}}>
             <DataCard />
             <DataCard />
             <DataCard />
@@ -89,9 +91,6 @@ const Offers = () => {
         <AllOffers />
         <AllOffers />
         <AllOffers />
-        <Grid container item sx={{ width: '100%', height: '25%', mt: 1 }}>
-          <DataFooter />
-        </Grid>
       </Grid>
     </Box>
   )

@@ -5,7 +5,8 @@ import TransitionsModal from './Modal'
 const Help = () => {
   return (
     <div>
-      <Typography>
+      <Typography
+      sx={{pb: 1}}>
         Do you need help?
       </Typography>
       <TransitionsModal name={'Call Helpline'} />

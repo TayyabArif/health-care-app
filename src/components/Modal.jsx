@@ -27,7 +27,7 @@ export default function TransitionsModal({ name }) {
         <div>
             <Button
                 variant="outlined"
-                sx={{width : '100%'}}
+                sx={{width : '100%', color: 'danger.main', borderColor: 'danger.main'}}
                 onClick={handleOpen}>
                 {name}
             </Button>
