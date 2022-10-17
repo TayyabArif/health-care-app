@@ -13,6 +13,7 @@ import AllSpecialistCard from '../components/AllSpecialistCard';
 import ConsultationDetailCard from '../components/ConsultationDetailCard';
 import QueriesCard from '../components/QueriesCard';
 import QueriesDetails from '../components/QueriesDetails';
+import DataCard from '../components/Card';
 
 const Queries = () => {
     return (
@@ -53,11 +54,21 @@ const Queries = () => {
                    <QueriesDetails />
                    <QueriesDetails />
                    <QueriesDetails />
+                   <Grid container item direction='column' sx={{ width: '98%', height: '30%', bgcolor: 'white', mb: '1%', p: 2 }}>
+                        <Typography>
+                        Book Special Offers
+                        </Typography>
+                        <Grid container item sx={{ width: '98%', height: '80%', bgcolor: 'white', mb: '1%', p: 2 }}>
+                        <DataCard />
+                        <DataCard />
+                        <DataCard />
+                        <DataCard />
+                        </Grid>
+                   </Grid>
                 </Grid>
             </Grid>
         </Box>
     )
 }
 
-export default Queries 
-
+export default Queries

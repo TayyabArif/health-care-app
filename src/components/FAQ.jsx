@@ -33,6 +33,7 @@ const FAQ = () => {
           <DropDown />
           <DropDown />
           <DropDown />
+          <DropDown />
         </Grid>
     </div>
   )
