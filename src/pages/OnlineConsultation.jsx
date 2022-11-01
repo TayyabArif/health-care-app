@@ -42,7 +42,7 @@ const OnlineConsultation = () => {
 
                     </Typography>
                     <FormControl sx={{ m: 1, minWidth: '700px', bgcolor: 'white', borderRadius: '10px' }}>
-                        <InputLabel htmlFor="outlined-adornment-amount">Select your City</InputLabel>
+                        {/* <InputLabel htmlFor="outlined-adornment-amount">Select your City</InputLabel> */}
                         <OutlinedInput
                             id="outlined-adornment-amount"
                             value=''
@@ -155,4 +155,3 @@ const OnlineConsultation = () => {
 }
 
 export default OnlineConsultation
-

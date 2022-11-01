@@ -1,11 +1,10 @@
 import React from 'react'
-import { Box, Grid, TextField, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/material/Button';
 import DataCard from '../components/Card';
 import AllOffers from '../components/AllOffers';
-import DataFooter from '../components/DataFooter';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -51,7 +50,7 @@ const Offers = () => {
         <Grid container item sx={{ width: '99%', height: '9%', bgcolor: '#f8f8ff', mb: '1%' }} alignItems='center'>
           <Button variant="text" sx={{ color: 'black',  fontSize: '0.8rem' }}>Home</Button>
           <KeyboardArrowRightIcon sx={{color: 'primary.main'}}/>
-          <Typography 
+          <Typography
           fontSize='0.9rem'
           >
             Special offers
@@ -75,7 +74,7 @@ const Offers = () => {
           </Grid>
         </Grid>
         <Grid container item sx={{ width: '99%', height: '9%', bgcolor: '#f8f8ff', mb: '1%' }} alignItems='center'>
-          <Typography 
+          <Typography
           sx={{ mt: 1, mb: 1 }}
           fontSize='1.2rem'
           fontWeight = 'bold'

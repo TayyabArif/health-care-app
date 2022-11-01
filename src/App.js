@@ -10,6 +10,10 @@ import BookLabTest from './pages/BookLabTest';
 import OnlineConsultation from './pages/OnlineConsultation';
 import Queries from './pages/Queries';
 import Home from './pages/Home'
+import Hospitals from './pages/Hospitals';
+import Surgeries from './pages/Surgeries';
+import Doctors from './pages/Doctors';
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -61,6 +65,27 @@ function App() {
           element={
             <Main>
               <Queries />
+            </Main>
+          }
+        />
+        <Route path="hospital"
+          element={
+            <Main>
+              <Hospitals />
+            </Main>
+          }
+        />
+        <Route path="surgeries"
+          element={
+            <Main>
+              <Surgeries />
+            </Main>
+          }
+        />
+        <Route path="doctors"
+          element={
+            <Main>
+              <Doctors />
             </Main>
           }
         />
