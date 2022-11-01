@@ -9,6 +9,7 @@ import OffersDetails from './pages/OffersDetails';
 import BookLabTest from './pages/BookLabTest';
 import OnlineConsultation from './pages/OnlineConsultation';
 import Queries from './pages/Queries';
+import Home from './pages/Home'
 import Hospitals from './pages/Hospitals';
 import Surgeries from './pages/Surgeries';
 import Doctors from './pages/Doctors';
@@ -17,6 +18,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
+      <Route path="/"
+          element={
+            <Main>
+              <Home />
+            </Main>
+          }
+        />
+
         <Route path="login"
           element={
             <Main>

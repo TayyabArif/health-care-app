@@ -20,6 +20,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuItems from './Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import HomeDropDown from './HomeDropDown';
 
 const pages = ['My Products', 'Pricing', 'Blog'];
 const settings = ['Login'];
@@ -122,10 +123,14 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button
               onClick={() => navigate('/')}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: 'black', display: 'block' }}
             >
               Home
             </Button>
+            <HomeDropDown underline={true} label="doctors"/>
+            <HomeDropDown underline={true} label="Consult online"/>
+            <HomeDropDown underline={true} label="Hospitals"/>
+            <HomeDropDown underline={true} label="Lab test"/>
             {/* <MenuItems /> */}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
