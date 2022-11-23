@@ -46,7 +46,7 @@ function Footer() {
             )
           })}
         </Grid>
-        <Grid constaineritem sx={{ height: "25%", width: '100%' }}>
+        <Grid container item sx={{ height: "25%", width: '100%' }}>
           <Copyright />
         </Grid>
       </Grid>

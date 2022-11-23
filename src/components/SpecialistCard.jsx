@@ -11,12 +11,12 @@ const Image = styled.img`
     margin-left: 40px;
     border-radius: 50%;
 `
-export default function SpecialistCard() {
+export default function SpecialistCard({name, number, img}) {
   return (
-    <Card sx={{ maxWidth: 170, mr: 4 , width: '100%'}}>
+    <Card sx={{ maxWidth: 200, mr: 4 , width: '100%'}}>
       <CardContent >
         <Grid container sx={{height: '100%', width: '100%', ml: 0}} alignItems='center'>
-        <Image src="https://h7u5d3a4.stackpathcdn.com/assets/images/kiosk/70x70/dentist.jpg" />
+        <Image src= {img} />
         </Grid>
         <Grid container direction = 'column' sx={{height: '100%', width: '100%', pt: 1}} alignItems='center' justifyContent='center'>
           <Typography
@@ -25,7 +25,7 @@ export default function SpecialistCard() {
           color='primary.main'
           fontFamily = 'Consolas'
           >
-           Dentists
+           {name}
           </Typography>
           <Typography
           fontSize='0.8rem'
@@ -33,7 +33,7 @@ export default function SpecialistCard() {
           color='primary.main'
           fontFamily = 'Consolas'
           >
-           402 Doctors Available
+           {number} Doctors Available
           </Typography>
         </Grid>
       </CardContent>
