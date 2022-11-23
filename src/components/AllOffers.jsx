@@ -7,6 +7,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import TransitionsModal from '../components/Modal';
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom';
 
 const Image = styled.img`
 height: 110px;
@@ -14,6 +15,7 @@ width: 180px;
 border-radius: 50%;
 `
 const AllOffers = () => {
+  const navigate = useNavigate()
   return (
     <Grid container item sx={{ width: '99%', height: '30%', bgcolor: 'white', pt: 1, mt: 1 }} justifyContent='space-between'>
       <Grid container item sx={{ width: '50%' }}>
@@ -88,7 +90,7 @@ const AllOffers = () => {
       </Grid>
       <Grid container item direction='column' sx={{ width: '50%', pl: 50, pr: 2 }}>
         <TransitionsModal name={'Call Helpline'} />
-        <Button variant="contained" sx={{ mt: 2 ,color: 'white', backgroundColor: 'danger.main'}}>View Details</Button>
+        <Button variant="contained" sx={{ mt: 2 ,color: 'white', backgroundColor: 'danger.main'}} onClick= {() => navigate('/offersdetails')}>View Details</Button>
       </Grid>
     </Grid>
   )

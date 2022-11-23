@@ -21,6 +21,10 @@ import PersonIcon from '@mui/icons-material/Person';
 import MenuItems from './Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import HomeDropDown from './HomeDropDown';
+import DoctorsDropDown from './DropDown/DoctorsDropDown';
+import HospitalsDropDown from './DropDown/HospitalsDropDown';
+import ConsultDropDown from './DropDown/ConsultDropDown';
+import LabTestDropDown from './DropDown/LabTestDropDown';
 
 const pages = ['My Products', 'Pricing', 'Blog'];
 const settings = ['Login'];
@@ -127,22 +131,22 @@ const Header = () => {
             >
               Home
             </Button>
-            <HomeDropDown underline={true} label="doctors"/>
-            <HomeDropDown underline={true} label="Consult online"/>
-            <HomeDropDown underline={true} label="Hospitals"/>
-            <HomeDropDown underline={true} label="Lab test"/>
+            <DoctorsDropDown />
+            <ConsultDropDown />
+            <HospitalsDropDown />
+            <LabTestDropDown />
+
             {/* <MenuItems /> */}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Grid container direction="row" justifyContent="space-between" sx={{ width: "100%" }} alignItems="center">
                 <Button
                   variant= 'contained'
-                  onClick={() => navigate('/login')}
-                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'danger.main', 
+                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'danger.main',
                   mx: 1, fontSize: '0.5px', borderRadius: '5px', color: 'white' }}
                   size= 'small'
                 >
-                  <PhoneIcon /> 
+                  <PhoneIcon />
                 </Button>
               <Grid item>
                 <Tooltip title="Open settings">
@@ -151,10 +155,10 @@ const Header = () => {
                   onClick={handleOpenUserMenu}
                   sx={{ my: 2, color: 'danger.main', display: 'block', fontSize: '1.5x', borderColor: 'danger.main' }}
                 >
-                  <PersonIcon /> 
+                  <PersonIcon />
                   <ArrowDropDownIcon />
                 </Button>
-                </Tooltip> 
+                </Tooltip>
                 <Menu
                   sx={{ mt: '45px' }}
                   id="menu-appbar"
@@ -174,7 +178,7 @@ const Header = () => {
                   {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <ListItem>
-                        <ListItemButton >
+                        <ListItemButton  onClick={() => navigate('/login')} >
                           <ListItemText primary={setting} />
                         </ListItemButton>
                       </ListItem>

@@ -13,6 +13,10 @@ import Home from './pages/Home'
 import Hospitals from './pages/Hospitals';
 import Surgeries from './pages/Surgeries';
 import Doctors from './pages/Doctors';
+import SignUp from './pages/SignUp';
+import Questions from './pages/Questions';
+import AskQuestions from './pages/AskQuestion';
+import Question from './components/Question';
 
 function App() {
   return (
@@ -33,6 +37,13 @@ function App() {
             </Main>
           }
         />
+        <Route path="signup"
+        element={
+          <Main>
+            <SignUp />
+          </Main>
+        }
+        />
         <Route path="offers"
           element={
             <Main>
@@ -47,7 +58,7 @@ function App() {
             </Main>
           }
         />
-        <Route path="lab%20test"
+        <Route path="lab%20test/:category"
           element={
             <Main>
               <BookLabTest />
@@ -68,7 +79,7 @@ function App() {
             </Main>
           }
         />
-        <Route path="hospital"
+        <Route path="hospital/:category"
           element={
             <Main>
               <Hospitals />
@@ -82,10 +93,31 @@ function App() {
             </Main>
           }
         />
-        <Route path="doctors"
+        <Route path="doctors/:category"
           element={
             <Main>
               <Doctors />
+            </Main>
+          }
+        />
+        <Route path="forum"
+          element={
+            <Main>
+              <Questions />
+            </Main>
+          }
+        />
+        <Route path="forum/post-a-question"
+          element={
+            <Main>
+              <AskQuestions />
+            </Main>
+          }
+        />
+        <Route path="forum/answer"
+          element={
+            <Main>
+              <Question />
             </Main>
           }
         />

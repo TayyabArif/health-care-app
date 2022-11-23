@@ -11,9 +11,9 @@ const TopData = ({ name, data }) => {
             >
                 {name}
             </Typography>
-            {data.map(data => {
+            {data.map((data, index) => {
                 return (
-                    <Link underline="none" href= '#' sx={{color: 'white', p: 1, width: '200px'}}
+                    <Link key={index} underline="none" href= '#' sx={{color: 'white', p: 1, width: '200px'}}
                     fontSize = '1rem'
                     fontFamily = 'Consolas'
                     >{data}</Link>

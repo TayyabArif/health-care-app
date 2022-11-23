@@ -1,28 +1,39 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link, useNavigate } from "react-router-dom";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
-import { Login } from '../redux/actions/Authentication';
+import { Signup } from '../redux/actions/Authentication/index.js';
 
-export default function LoginForm() {
+export default function SignUpForm() {
   const form = useRef();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [degree, setDegree] = useState("");
+  const [speciality, setSpeciality] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [type, setType] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user_data.user)
-  const [formError, setFormError] = useState("");
   const [errors, setErrors] = useState(null);
+  const user = useSelector(state => state.user_data.user)
+  const loading = useSelector(state => state.user_data.loading)
+  const handleChange = (event) => {
+    setType(event.target.value);
+  };
   function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
@@ -35,19 +46,22 @@ export default function LoginForm() {
     event.preventDefault();
     const myForm = {
       email: email,
+      name: name,
+      type: type,
+      degree: degree,
+      speciality: speciality,
+      phoneNumber: phoneNumber,
       password: password
     }
-    dispatch(Login(myForm))
+    dispatch(Signup(myForm))
     form.current.reset();
   };
-
   useEffect(() => {
     const myUser = localStorage.getItem('Type')
     if(myUser){
       navigate('/')
     }
   }, [user]);
-
 
   return (
     <Container component="main" maxWidth="xs" sx={{ ml: '0px', mr: '0px'}}>
@@ -78,7 +92,7 @@ export default function LoginForm() {
         color='primary.main'
         fontSize="1.8rem"
         >
-          Log in to your account
+          Lets Register your self Quickly
         </Typography>
         <Box component="form" ref={form} onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
@@ -104,6 +118,70 @@ export default function LoginForm() {
             margin="normal"
             required
             fullWidth
+            id="name"
+            label="Name"
+            name={email}
+            autoComplete="name"
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <FormControl sx={{ m: 1, minWidth: 220 }} required>
+            <InputLabel id="demo-simple-select-helper-label">Type</InputLabel>
+            <Select
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              value={type}
+              label="Age"
+              onChange={handleChange}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value='Doctor'>Doctor</MenuItem>
+              <MenuItem value='Patient'>Patient</MenuItem>
+            </Select>
+          </FormControl>
+          {type === 'Doctor' &&
+          <TextField
+            required
+            margin="normal"
+            fullWidth
+            id="degree"
+            label="Your Degree"
+            name={degree}
+            autoComplete="degree"
+            type="text"
+            onChange={(e) => setDegree(e.target.value)}
+          />
+          }
+          {type === 'Doctor' &&
+          <TextField
+            required
+            margin="normal"
+            fullWidth
+            id="speciality"
+            label="Speciality"
+            name={speciality}
+            autoComplete="Speciality"
+            type="text"
+            onChange={(e) => setSpeciality(e.target.value)}
+          />
+          }
+          <TextField
+            required
+            margin="normal"
+            fullWidth
+            id="number"
+            label="Phone Number"
+            name={phoneNumber}
+            autoComplete="Phone Number"
+            type="number"
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
             name={password}
             label="Password"
             type="password"
@@ -117,16 +195,10 @@ export default function LoginForm() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Log In
+            Sign Up
           </Button>
-          <Grid container item justifyContent='center'>
-            <Grid item direction='column'>
-              <Typography>
-                Don't have Account?
-              </Typography>
-              <Grid sx={{pl: '40px'}}>
-              <Link to='/signup' >Sign Up</Link>
-              </Grid>
+          <Grid container>
+            <Grid item xs>
             </Grid>
           </Grid>
         </Box>

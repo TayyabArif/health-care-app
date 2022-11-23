@@ -10,7 +10,7 @@ const Image = styled.img`
   width: 90px;
   border-radius: 50%;
 `;
-const DoctorlInfo = () => {
+const DoctorlInfo = ({data}) => {
   return (
     <Grid
       container
@@ -31,16 +31,16 @@ const DoctorlInfo = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Image src="https://staticconnect.marham.pk/assets/doctors/2899/asst-prof-dr-salman-javed-gastroenterologist-lahore-37_170X170.JPG" />
+            <Image src={data.image} />
           </Grid>
           <Grid container item direction="column" sx={{ width: "60%", ml: 3 }}>
-            <Link href="#">Asst. Prof. Dr. Salman Javed</Link>
+            <Link href="#">{data.name}</Link>
             <Typography
               fontSize="1rem"
               fontFamily="Consolas"
               sx={{ width: "90%", pt: 1 }}
             >
-              Gastroenterologist
+              {data.speciality}
             </Typography>
             <Typography
               fontSize="0.8rem"
@@ -75,7 +75,7 @@ const DoctorlInfo = () => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  1964+
+                  {data.review}+
                 </Typography>
               </Grid>
               <Divider
@@ -104,7 +104,7 @@ const DoctorlInfo = () => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  17 years
+                  {data.waitingTime}years
                 </Typography>
               </Grid>
               <Divider
@@ -133,7 +133,7 @@ const DoctorlInfo = () => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  94%
+                  {data.patientSatisfy}%
                 </Typography>
               </Grid>
             </Grid>
