@@ -82,9 +82,11 @@ const BookLabTest = ({ route, navigation }) => {
           <Grid sx={{bgcolor: 'white', height: '15%', width: '90%', mb: '1%',  mt: 1, p: 1 }}>
             <AddTest />
           </Grid>
+          {isCityLab &&
           <Grid container item direction='column' sx={{ bgcolor: 'white', height: '15%',width: '90%',p: 3, mb: '1%' }}>
-            <FAQ />
+            <FAQ data={labTest[0].questions}/>
           </Grid>
+          }
           {labData &&
           <Grid container item direction='column' sx={{ bgcolor: 'white',width: '90%', height: '10%', p: 3, mb: '1%' }}>
             <Typography

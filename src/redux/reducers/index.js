@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { all_Questions, ask_Question, Doctors, lab_Tests, top_Searched_Doctors, user_data } from "./reducer";
+import { all_Questions, ask_Question, Doctors, lab_Tests, top_Searched_Doctors, user_data, all_Specialists } from "./reducer";
 
 export const reducers= combineReducers(
     {
@@ -8,6 +8,7 @@ export const reducers= combineReducers(
         top_Searched_Doctors: top_Searched_Doctors,
         user_data: user_data,
         ask_Question: ask_Question,
-        all_Questions: all_Questions
+        all_Questions: all_Questions,
+        all_Specialists: all_Specialists
     }
 )

@@ -37,13 +37,10 @@ const ConsultDropDown = () => {
               Online Services
               </Typography>
               <MenuItem value={10} sx={{pb:'10px'}} onClick={() => navigate('/online-consultation')}>All Online Doctors</MenuItem>
-              <MenuItem value={20} sx={{pb:'10px'}}>Ask Doctor - Q/A</MenuItem>
+              <MenuItem value={20} sx={{pb:'10px'}} onClick={() => navigate('/forum')}>Ask Doctor - Q/A</MenuItem>
               <MenuItem value={30} sx={{pb:'10px'}} onClick={() => navigate('/help-me')}>Help me Marham</MenuItem>
               </Grid>
           </Grid>
-          {/* <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
     </div>

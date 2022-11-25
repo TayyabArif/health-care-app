@@ -18,7 +18,7 @@ const labTestsName = [
 const PakistanLabs = [
   {name: 'Labs in Karachi', param: 'karachi'},
   {name: 'Labs in Islamabad', param: 'islamabad'},
-  {name: 'Labs in Sialkot', param: 'sialkot'},
+  {name: 'Labs in Lahore', param: 'lahore'},
   {name: 'Labs in Sargodha', param: 'sargodha'},
   {name: 'Labs in Peshawar', param: 'peshawar'}
 ]

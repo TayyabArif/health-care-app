@@ -59,7 +59,7 @@ export default function SignUpForm() {
   useEffect(() => {
     const myUser = localStorage.getItem('Type')
     if(myUser){
-      navigate('/')
+      navigate('/login')
     }
   }, [user]);
 

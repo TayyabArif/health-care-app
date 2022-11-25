@@ -1,23 +1,33 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import { borderRadius } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from "@mui/material/Avatar";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CardContent from "@mui/material/CardContent";
-import HomeDropDown from "../components/HomeDropDown";
+import { useNavigate } from 'react-router-dom';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { useDispatch } from 'react-redux';
+import { labTests } from '../redux/actions/LabTests';
 
 function Home() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+  const goTo = () => {
+    document.getElementById('header').scrollIntoView();
+  }
+  const handleChange = (event, name) => {
+    console.log('event name is', event)
+    dispatch(labTests(event))
+    navigate(`/lab%20test/${event}`, { state: {name: 'Lab name', data: event, lab: name} })
+};
   return (
     <Grid container direction="column" sx={{ backgroundColor: "#eeeee4" }}>
-      <Grid item className="banner">
+      <Grid item className="banner" id='top'>
         <Box
           sx={{
             height: "147px",
@@ -50,9 +60,11 @@ function Home() {
           >
             <TextField
               id="basic"
-              defaultValue="Lahore"
-              label="Enter City"
+              defaultValue="Best Offers available"
+              label="Lahore"
+              sx={{minWidth: '50%'}}
               variant="filled"
+              disabled
             />
           </Box>
           <Box
@@ -68,9 +80,11 @@ function Home() {
           >
             <TextField
               id="basic"
-              defaultValue="Lahore"
-              label="Enter City"
+              sx={{minWidth: '50%'}}
+              defaultValue="Best Hospitals available"
+              label="Lahore"
               variant="filled"
+              disabled
             />
           </Box>
         </Grid>
@@ -135,7 +149,7 @@ function Home() {
                   color: "rgb(1 78 120)",
                 }}
               >
-                Find and Book Appointment
+                Find and Book Tests
               </Typography>
               <Typography
                 variant="h2"
@@ -143,7 +157,11 @@ function Home() {
               >
                 16000+ PMC Verified doctors
               </Typography>
-              <Button variant="contained">Contained</Button>
+              <Button variant="contained" disabled
+              >
+                <ArrowUpwardIcon />
+                Select Doctor
+              </Button>
             </Box>
             <Box sx={{ maxWidth: "25%" }}>
               <img
@@ -180,7 +198,11 @@ function Home() {
               >
                 Are you looking for a Doctor
               </Typography>
-              <Button variant="contained">Contained</Button>
+              <Button variant="contained" disabled
+              >
+                <ArrowUpwardIcon />
+                Select Doctor
+              </Button>
             </Box>
             <Box sx={{ maxWidth: "25%" }}>
               <img
@@ -328,7 +350,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Hernia
             </Typography>
           </Box>
           <Box
@@ -378,7 +400,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Urologist
             </Typography>
           </Box>
           <Box
@@ -481,7 +503,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+                Psychiatrist
             </Typography>
           </Box>
           <Box
@@ -541,7 +563,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Internists
             </Typography>
           </Box>
           <Box
@@ -591,7 +613,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+             Diabetes
             </Typography>
           </Box>
         </Box>
@@ -605,6 +627,7 @@ function Home() {
           <Button
             variant="contained"
             sx={{ backgroundColor: "danger.main", fontSize: "0.7rem" }}
+            onClick={() => navigate('/online-consultation')}
           >
             View All Specialists
           </Button>
@@ -1020,7 +1043,9 @@ function Home() {
           display="flex"
           marginY="0.5rem"
         >
-          <Button variant="contained">View All Diseases</Button>
+          <Button variant="contained"
+           onClick={() => goTo()}
+          >View All Diseases</Button>
         </Box>
       </Grid>
       <Grid
@@ -1087,6 +1112,7 @@ function Home() {
                 <Button
                   variant="contained"
                   sx={{ backgroundColor: "#c02942", paddingX: "5rem" }}
+                  onClick={() => handleChange('chugtai lab', 'Chughtai Lab')}
                 >
                   Book Lab Tests
                 </Button>
@@ -1215,84 +1241,6 @@ function Home() {
           >
             Download App
           </Button>
-        </Box>
-      </Grid>
-      <Grid sx ={{backgroundColor: "#fff"}}>
-        <Grid
-          item
-          justifyContent="center"
-          alignItems="center"
-          xs={12}
-          display="flex"
-        >
-          <Typography
-            variant="h3"
-            style={{
-              fontSize: "1.125rem",
-              fontWeight: "bold",
-              color: "rgb(1 78 120)",
-              lineHeight: "1.7778",
-              paddingTop: "0.5rem",
-            }}
-          >
-            Find Doctor By City
-          </Typography>
-        </Grid>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            paddingX: "2rem",
-            justifyContent: "center",
-            marginY: "1rem",
-          }}
-        >
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-          <HomeDropDown underline={false} />
-        </Box>
-      </Grid>
-      <Grid sx ={{backgroundColor: "#fff", my: '5px'}}>
-        <Grid
-          item
-          justifyContent="center"
-          alignItems="center"
-          xs={12}
-          display="flex"
-        >
-          <Typography
-            variant="h3"
-            style={{
-              fontSize: "1.125rem",
-              fontWeight: "bold",
-              color: "rgb(1 78 120)",
-              lineHeight: "1.7778",
-              paddingTop: "0.5rem",
-            }}
-          >
-            Common Services, Diseases, Surgeries & Hospitals
-          </Typography>
-        </Grid>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            paddingX: "2rem",
-            justifyContent: "space-evenly",
-            marginY: "1rem",
-          }}
-        >
-          <HomeDropDown underline={false} label="services" />
-          <HomeDropDown underline={false} label="diseases" />
-          <HomeDropDown underline={false} label="surgeries" />
-          <HomeDropDown underline={false} label="hospitals" />
         </Box>
       </Grid>
     </Grid>

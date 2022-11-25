@@ -50,8 +50,8 @@ const DoctorsDropDown = () => {
           disableUnderline = {true}
           sx={{border: "none"}}
         >
-          <Grid container className={classes.container} sx={{minWidth: '70vw', pt: '20px'}}>
-              <Grid container item direction='column' sx={{width: '25%'}} alignContent='center'>
+          <Grid container className={classes.container} sx={{minWidth: '40vw', pt: '20px'}}>
+              <Grid container item direction='column' sx={{width: '50%'}} alignContent='center'>
               <Typography
               fontSize='1rem'
               fontWeight = 'bold'
@@ -72,7 +72,7 @@ const DoctorsDropDown = () => {
                 Are you Doctor?
               </Button>
               </Grid>
-              <Grid container item direction='column' sx={{width: '23%', ml: '15px'}} alignContent='center'>
+              <Grid container item direction='column' sx={{width: '47%', ml: '15px'}} alignContent='center'>
               <Typography
               fontSize='1rem'
               fontWeight = 'bold'
@@ -99,16 +99,6 @@ const DoctorsDropDown = () => {
                   <MenuItem value={data} onClick={() => handleServiceChange(`${data}`)}>{data}</MenuItem>
                 )
               })}
-              </Grid>
-              <Grid container item direction='column' sx={{width: '25%'}} alignContent='center'>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-              </Grid>
-              <Grid container item direction='column' sx={{width: '25%'}} alignContent='center'>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
               </Grid>
           </Grid>
         </Select>

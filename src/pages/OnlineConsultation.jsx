@@ -13,7 +13,7 @@ import AllSpecialistCard from '../components/AllSpecialistCard';
 import ConsultationDetailCard from '../components/ConsultationDetailCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { topSearched } from '../redux/actions/online-consultation';
+import { topSearched, allSpecialities } from '../redux/actions/online-consultation';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
@@ -21,9 +21,11 @@ const OnlineConsultation = () => {
     const dispatch = useDispatch();
     const loading = useSelector(state => state.top_Searched_Doctors.loading)
     const topSpecialistDoctor = useSelector(state => state.top_Searched_Doctors.topSearchedDoctor)
-    console.log('top searched data issssssssss', topSpecialistDoctor)
+    const allSpecialists = useSelector(state => state.all_Specialists.allSpecialists)
+    console.log('top searched data issssssssss', allSpecialists)
     useEffect(() => {
           dispatch(topSearched())
+          dispatch(allSpecialities())
       }, [])
     return (
         <Grid container>
@@ -112,12 +114,6 @@ const OnlineConsultation = () => {
                             )
                           }
                         })}
-                          {/* <SpecialistCard />
-                          <SpecialistCard />
-                          <SpecialistCard />
-                          <SpecialistCard />
-                          <SpecialistCard />
-                          <SpecialistCard /> */}
                       </Grid>
                   </Grid>
                   <Grid container item sx={{ width: '99%', height: '35%', bgcolor: 'white', mb: '1%', p: 2 }} >
@@ -132,61 +128,15 @@ const OnlineConsultation = () => {
                           </Typography>
                       </Grid>
                       <Grid container item sx={{ width: '100%', height: '89%', mt: 1, mb: 1 }}>
-                          <Grid container item direction='column' sx={{ width: '33%', height: '100%' }}>
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
+                        {allSpecialists &&
+                          <Grid container item sx={{ width: '100%', height: '100%' }}>
+                            {allSpecialists?.map(speciality => {
+                                return (
+                                    <AllSpecialistCard speciality={speciality}/>
+                                )
+                            })}
                           </Grid>
-                          <Grid container item direction='column' sx={{ width: '33%', height: '100%' }}>
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                          </Grid>
-                          <Grid container item direction='column' sx={{ width: '33%', height: '100%' }}>
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                              <AllSpecialistCard />
-                          </Grid>
-
+                        }
                       </Grid>
                   </Grid>
                   <Grid container item direction='column' sx={{ width: '95%', height: '15%', bgcolor: 'white', p: 2, mb: '1%' }} justifyContent='center' >

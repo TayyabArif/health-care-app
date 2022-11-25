@@ -12,7 +12,6 @@ export const Signup = (data) => {
           });
           const result = await response.json()
           if (response.status >= 200 && response.status < 400) {
-            localStorage.setItem('Type', result.type)
             dispatch({ type: actionTypes.SIGNUP, payload: result })
           }
           else {
@@ -38,6 +37,7 @@ export const Login = (data) => {
             const result = await response.json()
             if (response.status >= 200 && response.status < 400) {
                 localStorage.setItem('Type', result[0].type)
+                localStorage.setItem('Name', result[0].name)
                 dispatch({ type: actionTypes.LOGIN, payload: result })
             }
             else {

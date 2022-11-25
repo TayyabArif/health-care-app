@@ -34,7 +34,6 @@ const AskQuestions = () => {
   const [checked, setChecked] = React.useState(true);
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState('Choose wisely');
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (asking === "" && gender === "") {
