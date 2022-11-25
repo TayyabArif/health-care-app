@@ -115,7 +115,7 @@ const Doctors = () => {
                 Best {data} In Lahore
               </Typography>
               <Typography sx={{ mb: 1 }} fontSize="0.9rem" fontFamily="Consolas">
-                Mental Health Specialist , Mahir-e-imraz-e- nafsiyat
+              {data}  Specialist , Mahir-e-imraz-e- {data}
               </Typography>
             </Grid>
             <Grid

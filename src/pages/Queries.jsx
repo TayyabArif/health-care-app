@@ -1,16 +1,7 @@
 import React from 'react'
 import { Box, Grid, Typography } from '@mui/material'
-import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputAdornment from '@mui/material/InputAdornment';
-import SpecialistCard from '../components/SpecialistCard';
-import FAQ from '../components/FAQ';
-import AllSpecialistCard from '../components/AllSpecialistCard';
-import ConsultationDetailCard from '../components/ConsultationDetailCard';
 import QueriesCard from '../components/QueriesCard';
 import QueriesDetails from '../components/QueriesDetails';
 import DataCard from '../components/Card';
@@ -46,23 +37,39 @@ const Queries = () => {
                     </Typography>
                 </Grid>
                 <Grid container item sx={{ width: '99%', height: '20%', mb: '1%', pl: 10, pt: 2, mt: '-85px' }} alignItems='center'>
-                    <QueriesCard />
-                    <QueriesCard />
-                    <QueriesCard />
+                    <QueriesCard value='Ask Questions'/>
+                    <QueriesCard value='Free Consultation'/>
+                    <QueriesCard value='Video Consultation' />
                 </Grid>
                 <Grid container item sx={{ width: '98%', height: '50%', bgcolor: 'white', mb: '1%', p: 2 }}>
-                   <QueriesDetails />
-                   <QueriesDetails />
-                   <QueriesDetails />
+                   <QueriesDetails
+                   heading= 'Book Consultation in Rs. 500'
+                   desc='Book video consultation with specialist doctors in as low asRs. 500'
+                   id={1}
+                   text= 'Book Video Consultation in Rs. 500'
+                   src='https://static.marham.pk/assets/images/help/ocinfivehunderd.png'/>
+                   <QueriesDetails
+                   heading= 'Find A Doctor In Your Area'
+                   desc='Book an appointment or video consultation with doctors from 96+ specialities'
+                   id={2}
+                   text='View all Specialties'
+                   src='https://static.marham.pk/assets/images/help/topspec.png'/>
+                   <QueriesDetails
+                   heading= 'Book Lab Tests'
+                   desc='Book your lab tests and avail up to a 25% discount on top laboratories in Pakistan'
+                   id={3}
+                   text='View Lab Tests'
+                   src='https://static.marham.pk/assets/images/help/lab.png'/>
                    <Grid container item direction='column' sx={{ width: '98%', height: '30%', bgcolor: 'white', mb: '1%', p: 2 }}>
                         <Typography>
                         Book Special Offers
                         </Typography>
                         <Grid container item sx={{ width: '98%', height: '80%', bgcolor: 'white', mb: '1%', p: 2 }}>
-                        <DataCard />
-                        <DataCard />
-                        <DataCard />
-                        <DataCard />
+                        <DataCard title='Dark circles and Treatment' src='https://static.marham.pk/assets/images/deal/dark-circle.png'/>
+                        <DataCard title = 'Hydra Facial Treatment' src='https://static.marham.pk/assets/images/deal/hydra-facial.jpg'/>
+                        <DataCard title = 'Pigmentation Facial Treatment' src='https://static.marham.pk/assets/images/deal/pigmentation.jpg'/>
+                        <DataCard title = 'Acne Scars Treatment' src = 'https://static.marham.pk/assets/images/deal/acne.png'/>
+                        <DataCard title = 'PRP Hair Treatment' src = 'https://static.marham.pk/assets/images/deal/prp.jpg'/>
                         </Grid>
                    </Grid>
                 </Grid>

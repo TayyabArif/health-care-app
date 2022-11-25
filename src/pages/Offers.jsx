@@ -66,11 +66,11 @@ const Offers = () => {
             Most view Details
           </Typography>
           <Grid container item sx={{ width: '100%', height: '25%', mt: 1, mb: 1, bgcolor: 'white'}}>
-            <DataCard />
-            <DataCard />
-            <DataCard />
-            <DataCard />
-            <DataCard />
+          <DataCard title='Dark circles and Treatment' src='https://static.marham.pk/assets/images/deal/dark-circle.png'/>
+              <DataCard title = 'Hydra Facial Treatment' src='https://static.marham.pk/assets/images/deal/hydra-facial.jpg'/>
+              <DataCard title = 'Pigmentation Facial Treatment' src='https://static.marham.pk/assets/images/deal/pigmentation.jpg'/>
+              <DataCard title = 'Acne Scars Treatment' src = 'https://static.marham.pk/assets/images/deal/acne.png'/>
+              <DataCard title = 'PRP Hair Treatment' src = 'https://static.marham.pk/assets/images/deal/prp.jpg'/>
           </Grid>
         </Grid>
         <Grid container item sx={{ width: '99%', height: '9%', bgcolor: '#f8f8ff', mb: '1%' }} alignItems='center'>

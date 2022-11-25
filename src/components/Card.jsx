@@ -7,18 +7,23 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom';
 
 const Image = styled.img`
     height: 70px;
     width: 70px;
     margin-left: 60px;
-    border-radius: 50%; 
+    border-radius: 50%;
 `
-export default function DataCard() {
+export default function DataCard({title, src}) {
+  const navigate = useNavigate()
+  const handleChange = (event) => {
+    navigate('/offers')
+  };
   return (
-    <Card sx={{ maxWidth: 220, mr: 3 , width: '100%'}}>
+    <Card sx={{ maxWidth: 190, mr: 3 , width: '100%'}} style={{cursor: 'pointer'}} onClick={()=> handleChange()}>
       <CardContent >
-        <Grid container item direction='column' sx={{ml: 10}} justifyContent='center' alignItems='center'>
+        <Grid container item direction='column' sx={{ml: 8}} justifyContent='center' alignItems='center'>
         <svg xmlns="http://www.w3.org/2000/svg" width='38' height='38' viewBox='0 0 38 38'>
           <g id="Group_5294" data-name="Group 5294" transform="translate(-536 -441)" >
             <circle id="Ellipse_267" data-name="Ellipse 267" cx="19" cy="19" r="19" transform="translate(536 441)" fill="#02c782" />
@@ -28,16 +33,16 @@ export default function DataCard() {
         </svg>
         </Grid>
         <Grid container sx={{height: '100%', width: '100%'}} alignItems='center'>
-        <Image src="https://static.marham.pk/assets/images/deal/dark-circle.png" />
+        <Image src= {src} />
         </Grid>
-        <Grid container direction = 'column' sx={{height: '100%', width: '50%', pt: 1, ml: 7}} alignItems='center'>
+        <Grid container direction = 'column' sx={{height: '100%', width: '70%', pt: 1, ml: 7}} alignItems='center'>
           <Typography
           fontSize='1rem'
           fontWeight = 'bold'
           color='primary.main'
           fontFamily = 'Consolas'
           >
-           Drak Circles Treatment
+           {title}
           </Typography>
         </Grid>
       </CardContent>

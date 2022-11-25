@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import AdbIcon from '@mui/icons-material/Adb';
@@ -18,18 +17,15 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PhoneIcon from '@mui/icons-material/Phone';
 import PersonIcon from '@mui/icons-material/Person';
-import MenuItems from './Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import HomeDropDown from './HomeDropDown';
 import DoctorsDropDown from './DropDown/DoctorsDropDown';
 import HospitalsDropDown from './DropDown/HospitalsDropDown';
 import ConsultDropDown from './DropDown/ConsultDropDown';
 import LabTestDropDown from './DropDown/LabTestDropDown';
+import PhoneModal from './PhoneModal';
 
-const pages = ['My Products', 'Pricing', 'Blog'];
 const settings = ['Login'];
 const Header = () => {
-  const token = localStorage.getItem('token')
   const image = localStorage.getItem('image')
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -48,8 +44,16 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const handleChange = () => {
+    localStorage.removeItem('Name');
+    localStorage.removeItem('Type');
+    navigate('/')
+  };
+
+  const token = localStorage.getItem('Name')
   return (
-    <AppBar position="static" sx={{bgcolor: 'white', py: 1}}>
+    <AppBar position="static" sx={{bgcolor: 'white', py: 1}} id='header'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -80,30 +84,6 @@ const Header = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -135,19 +115,32 @@ const Header = () => {
             <ConsultDropDown />
             <HospitalsDropDown />
             <LabTestDropDown />
+            <Button
+              onClick={() => navigate('/surgeries')}
+              sx={{ my: 2, color: 'black', display: 'block' }}
+            >
+              Surgeries
+            </Button>
+            <Button
+              onClick={() => navigate('/offers')}
+              sx={{ my: 2, color: 'black', display: 'block' }}
+            >
+              Special Offers
+            </Button>
 
             {/* <MenuItems /> */}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Grid container direction="row" justifyContent="space-between" sx={{ width: "100%" }} alignItems="center">
-                <Button
+                {/* <Button
                   variant= 'contained'
                   sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'danger.main',
                   mx: 1, fontSize: '0.5px', borderRadius: '5px', color: 'white' }}
                   size= 'small'
                 >
                   <PhoneIcon />
-                </Button>
+                </Button> */}
+                <PhoneModal />
               <Grid item>
                 <Tooltip title="Open settings">
                  <Button
@@ -178,9 +171,19 @@ const Header = () => {
                   {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <ListItem>
-                        <ListItemButton  onClick={() => navigate('/login')} >
-                          <ListItemText primary={setting} />
+                        {token ?
+                        <ListItemButton  onClick={() => handleChange() }>
+                          <Grid container direction='column'>
+                            <Typography sx={{mb: '10px', color: 'danger.main'}}>
+                              {token}
+                            </Typography>
+                            <ListItemText primary={"Log Out"} />
+                          </Grid>
                         </ListItemButton>
+                        : <ListItemButton  onClick={() => navigate('/login')} >
+                          <ListItemText primary={setting} />
+                      </ListItemButton>
+                       }
                       </ListItem>
                     </MenuItem>
                   ))}

@@ -8,7 +8,8 @@ const initialState ={
   isCityLab: false,
   user: null,
   isAsked: false,
-  allQuestions: []
+  allQuestions: [],
+  allSpecialists: []
 }
 
 export const user_data = (state = initialState, { type, payload }) => {
@@ -82,6 +83,21 @@ export const top_Searched_Doctors = (state = initialState, { type, payload }) =>
           return { ...state }
   }
 }
+
+export const all_Specialists = (state = initialState, { type, payload }) => {
+    switch (type) {
+        case actionTypes.ALL_SPECIALISTS:
+            return {
+                ...state, allSpecialists: payload, loading: false
+            };
+        case actionTypes.ALL_SPECIALISTS_ERR:
+            return {
+                ...state, loading: false
+            }
+        default:
+            return { ...state }
+    }
+  }
 
 export const ask_Question = (state = initialState, { type, payload }) => {
   switch (type) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Divider, Grid, Typography } from '@mui/material'
 import Button from '@mui/material/Button';
 import Help from '../components/Help';
@@ -9,25 +9,42 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getQuestions } from '../redux/actions/Questions';
 import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
 
 const Questions = () => {
   const allQuestions = useSelector(state => state.all_Questions.allQuestions)
   const loading = useSelector(state => state.all_Questions.loading)
-  console.log('vvvvvvvfffffffvvvvvvv', allQuestions)
   const dispatch = useDispatch()
+  const type = localStorage.getItem('Type')
   useEffect(() => {
     dispatch(getQuestions())
   }, [])
   const navigate = useNavigate()
+  const [value,setValue]= useState("")
+  const [loginType, setLoginType] = useState("")
+  const handleNavigate = () => {
+    if(!type){
+      setValue('null')
+    }
+    else if(type === 'Doctor')
+    {
+      setLoginType('Doctor')
+    }
+    else{
+      navigate('/forum/post-a-question')
+    }
+  };
   return (
     <Grid container>
       {loading ?
         <Box sx={{ display: 'flex', height: '100vh', width: '100%', }} justifyContent='center' alignItems="center">
             <CircularProgress />
         </Box> :
-      <Box component="div" sx={{ height: '100%', width: '100%', bgcolor: '#eeeee4'}}>
+        <Box component="div" sx={{ height: '100%', width: '100%', bgcolor: '#eeeee4'}}>
         <Grid container direction='column' sx={{ height: '100%', width: '100%' }} alignItems="center" justifyContent='space-between' >
           <Grid container item direction='column' sx={{ width: '95%', height: '11%', bgcolor: 'white', p: 3, mb: '1%', mt:'1%' }}>
+           {value === 'null' && <Alert severity="error">Please login first to Post a Question</Alert>}
+           {loginType === 'Doctor' && <Alert severity="error">Doctors are not allowed to post Question</Alert>}
             <Typography
             sx={{ mt: 1, mb: 1 }}
             fontSize='1.3rem'
@@ -37,7 +54,7 @@ const Questions = () => {
             >
               Ask Questions From Qualifed Doctors And Get Authentic Answers
             </Typography>
-            <Button variant="contained" sx={{width: '15%', mt: 2, bgcolor: 'danger.main', p: 1, borderRadius: '10px' }} onClick={() => navigate('/forum/post-a-question')}>Post Question</Button>
+            <Button variant="contained" sx={{width: '15%', mt: 2, bgcolor: 'danger.main', p: 1, borderRadius: '10px' }} onClick={() => handleNavigate()}>Post Question</Button>
           </Grid>
           <Grid container item  sx={{ width: '95%', height: '15%', mb: '1%'}}>
             <VideoConsultationBox marginTop="0px" marginBottom = "0px"/>

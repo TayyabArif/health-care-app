@@ -15,7 +15,7 @@ const MenuProps = {
   },
 };
 
-export default function DropDown() {
+export default function DropDown({question}) {
 
   return (
     <div>
@@ -26,7 +26,7 @@ export default function DropDown() {
           input={<OutlinedInput />}
           renderValue={(selected) => {
             if (selected.length === 0) {
-              return <em>Is it a safe treatment? </em>;
+              return <em>{question.Question}</em>;
             }
             return selected.join(', ');
           }}
@@ -34,7 +34,7 @@ export default function DropDown() {
           inputProps={{ 'aria-label': 'Without label' }}
         >
             <Typography sx={{p: 3}}>
-            Yes, the procedure is completely safe and is conducted under the supervision of highly expert surgeons. It has amazing results as per the feedback of the patients who get this treatment done.
+              {question.Answer}
             </Typography>
         </Select>
       </FormControl>

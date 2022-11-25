@@ -3,7 +3,7 @@ import DropDown from '../components/DropDown';
 import { Box, Grid, Link, TextField, Typography } from '@mui/material'
 import TransitionsModal from '../components/Modal';
 
-const FAQ = () => {
+const FAQ = ({data}) => {
   return (
     <div>
    <Grid container item sx={{ height: '30%' }} justifyContent='space-between' alignItems='center'>
@@ -30,10 +30,11 @@ const FAQ = () => {
           </Grid>
         </Grid>
         <Grid container item direction='column' sx={{ height: '70%' }} >
-          <DropDown />
-          <DropDown />
-          <DropDown />
-          <DropDown />
+        {data?.map(question => {
+            return (
+              <DropDown question={question}/>
+            )
+          })}
         </Grid>
     </div>
   )
