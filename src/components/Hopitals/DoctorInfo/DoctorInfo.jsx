@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import styled from "styled-components";
 import Divider from "@mui/material/Divider";
 import DoctorInfoCard from "./DoctorInfoCard";
+import AppointmentModal from "../../AppointmentModal";
 
 const Image = styled.img`
   height: 90px;
@@ -37,21 +38,16 @@ const DoctorlInfo = ({data}) => {
             <Link href="#">{data.name}</Link>
             <Typography
               fontSize="1rem"
-              fontFamily="Consolas"
+
               sx={{ width: "90%", pt: 1 }}
             >
               {data.speciality}
             </Typography>
             <Typography
               fontSize="0.8rem"
-              fontFamily="Consolas"
               sx={{ width: "90%", pt: 1 }}
             >
-              MBBS , FRCP (LONDON) , (Pb) , MD (USA) , MACP (USA) , FCPS
-              (Gastro) Endoscopy, Peg Tube Placement{" "}
-              <Link underline="none" href="#">
-                +11 more
-              </Link>
+              {data.degree}
             </Typography>
             <Grid container item sx={{ width: "90%", mb: 2, mt: 1 }}>
               <Grid
@@ -64,14 +60,12 @@ const DoctorlInfo = ({data}) => {
               >
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
                   sx={{ width: "90%" }}
                 >
                   Reviews
                 </Typography>
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
@@ -93,14 +87,12 @@ const DoctorlInfo = ({data}) => {
               >
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
                   sx={{ width: "90%" }}
                 >
                   Experience
                 </Typography>
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
@@ -122,14 +114,13 @@ const DoctorlInfo = ({data}) => {
               >
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
                   sx={{ width: "90%" }}
                 >
                   Satisfaction
                 </Typography>
                 <Typography
                   fontSize="0.9rem"
-                  fontFamily="Consolas"
+
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
@@ -151,12 +142,13 @@ const DoctorlInfo = ({data}) => {
           >
             Video Consultation
           </Button>
-          <Button
+          {/* <Button
             variant="contained"
             sx={{ mt: 2, color: "white", backgroundColor: "primary.main" }}
           >
             Book A ppointment
-          </Button>
+          </Button> */}
+          <AppointmentModal />
         </Grid>
       </Grid>
       <Grid
@@ -166,12 +158,10 @@ const DoctorlInfo = ({data}) => {
       >
         <Typography
           fontSize="0.9rem"
-          fontFamily="Consolas"
           sx={{ width: "90%", p:1 }}
         >
-          Asst. Prof. Dr. Salman Javed - Gastroenterologist, Lahore -
-          Appointment DetailsAsst. Prof. Dr. Salman Javed is a qualified Gastroenterologist
-          in Lahore with over 17 years in gastroenterology... <Link underline="none" href="#">
+          {data.name} - {data.speciality}, Lahore -
+          Appointment Detail{data.name} is a {data.desig}... <Link underline="none" href="#">
           Read More
           </Link>
         </Typography>
@@ -180,9 +170,13 @@ const DoctorlInfo = ({data}) => {
         container
         item
         sx={{ width: "99%", height: "15%", bgcolor: "white", bgcolor: 'white', pt: 2, flexWrap: 'wrap' }}>
-          <DoctorInfoCard />
-          <DoctorInfoCard />
-          <DoctorInfoCard />
+          <DoctorInfoCard title={data.hospital[0]?.name} available='Today' timing={data.hospital[0]?.timing} price= {data.hospital[0]?.price} id={1}/>
+          {data.hospital[1] &&
+          <DoctorInfoCard title= {data.hospital[1]?.name} available={data.hospital[1]?.wDays} timing={data.hospital[1]?.timing} price={data.hospital[1]?.price} id={2}/>
+          }
+          {data.hospital[2] &&
+           <DoctorInfoCard title= {data.hospital[2]?.name} available={data.hospital[2]?.wDays} timing={data.hospital[2]?.timing} price={data.hospital[2]?.price} id={3}/>
+          }
       </Grid>
     </Grid>
   );

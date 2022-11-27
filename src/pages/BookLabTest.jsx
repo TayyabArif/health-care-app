@@ -15,6 +15,9 @@ import { useLocation } from 'react-router-dom';
 import { cityLabTests, labTests } from '../redux/actions/LabTests';
 import AddTest from '../components/AddTest';
 import LabTest from '../components/LabTest';
+import Alert from '@mui/material/Alert';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 const Image = styled.img`
     width: 100%;
     height: 100%;
@@ -24,6 +27,7 @@ const BookLabTest = ({ route, navigation }) => {
   const labTest = useSelector(state => state.lab_Tests.labTests)
   const loading = useSelector(state => state.lab_Tests.loading)
   const isCityLab = useSelector(state => state.lab_Tests.isCityLab)
+  const isPosted = useSelector(state => state.lab_Tests.isPosted)
   console.log('lab test incdcdvdvdvdvvvfv', labTest)
   const {state} = useLocation();
   const { name, data , lab} = state;
@@ -42,6 +46,10 @@ const BookLabTest = ({ route, navigation }) => {
       dispatch(labTests(data))
     }
   }, [])
+  const [alert, setAlert] = React.useState(false)
+    const handleClose = () => {
+        setAlert(true)
+    }
   return (
     <Grid container>
       {
@@ -80,7 +88,19 @@ const BookLabTest = ({ route, navigation }) => {
             )
           })}
           <Grid sx={{bgcolor: 'white', height: '15%', width: '90%', mb: '1%',  mt: 1, p: 1 }}>
-            <AddTest />
+            {(isPosted && !alert) &&
+             <Grid container item alignItems="center" justifyContent='center'>
+              <Alert severity="success">Your Test is Added</Alert>
+              <CancelIcon
+                  type="submit"
+                  variant="contained"
+                  sx={{ alignItems: "flex-end", color: 'danger.main' }}
+                  onClick={handleClose}
+              >
+              </CancelIcon>
+              </Grid>
+              }
+            <AddTest data={labData}/>
           </Grid>
           {isCityLab &&
           <Grid container item direction='column' sx={{ bgcolor: 'white', height: '15%',width: '90%',p: 3, mb: '1%' }}>

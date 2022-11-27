@@ -50,3 +50,29 @@ export const labTests = (data) => {
       }
   }
 }
+
+export const addTest = (data) => {
+    console.log('data is', data)
+    return async function (dispatch) {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/book`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: (data)
+            });
+            const result = await response.json()
+            if (response.status >= 200 && response.status < 400) {
+                dispatch({ type: actionTypes.POST_TEST, payload: result })
+            }
+            else {
+                console.log('Your Data is not loaded')
+                dispatch({ type: actionTypes.POST_TEST_ERR})
+            }
+        } catch (err) {
+            debugger
+        }
+    }
+  }

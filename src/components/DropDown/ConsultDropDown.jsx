@@ -15,7 +15,7 @@ const ConsultDropDown = () => {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "10vw" }}>
-        <InputLabel id="demo-simple-select-standard-label">Consult Online</InputLabel>
+        <InputLabel id="demo-simple-select-standard-label" sx={{color: 'primary.main'}}>Consult Online</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
@@ -38,7 +38,7 @@ const ConsultDropDown = () => {
               </Typography>
               <MenuItem value={10} sx={{pb:'10px'}} onClick={() => navigate('/online-consultation')}>All Online Doctors</MenuItem>
               <MenuItem value={20} sx={{pb:'10px'}} onClick={() => navigate('/forum')}>Ask Doctor - Q/A</MenuItem>
-              <MenuItem value={30} sx={{pb:'10px'}} onClick={() => navigate('/help-me')}>Help me Marham</MenuItem>
+              <MenuItem value={30} sx={{pb:'10px'}} onClick={() => navigate('/help-me')}>Help me Health Care</MenuItem>
               </Grid>
           </Grid>
         </Select>

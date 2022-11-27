@@ -40,7 +40,7 @@ const DoctorsDropDown = () => {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "10vw" }}>
-        <InputLabel id="demo-simple-select-standard-label">Doctors</InputLabel>
+        <InputLabel id="demo-simple-select-standard-label" sx={{color: 'primary.main'}}>Doctors</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
