@@ -5,8 +5,10 @@ import Button from "@mui/material/Button";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Divider from '@mui/material/Divider';
+import { useNavigate } from "react-router-dom";
 
 const VideoConsultationBox = ({marginTop, marginBottom}) => {
+  const navigate=useNavigate()
   return (
     <Grid
     item
@@ -91,6 +93,7 @@ const VideoConsultationBox = ({marginTop, marginBottom}) => {
       <Button
       variant="contained"
       sx={{ mt:'2.125rem', color:"danger.main", backgroundColor:"white", pl:'2rem', pr:'2rem', borderRadius:'8px'}}
+      onClick={() => navigate('/online-consultation')}
       >
       View Online Doctors
       </Button>

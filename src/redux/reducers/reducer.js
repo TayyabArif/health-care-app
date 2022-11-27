@@ -9,7 +9,8 @@ const initialState ={
   user: null,
   isAsked: false,
   allQuestions: [],
-  allSpecialists: []
+  allSpecialists: [],
+  isPosted: false
 }
 
 export const user_data = (state = initialState, { type, payload }) => {
@@ -49,6 +50,14 @@ export const lab_Tests = (state = initialState, { type, payload }) => {
           return {
               ...state, loading: false, isCityLab: false
           };
+        case actionTypes.POST_TEST:
+        return {
+            ...state, loading: false, isPosted: true
+        };
+        case actionTypes.POST_TEST_ERR:
+        return {
+            ...state, loading: false, isPosted: true
+        };
         default:
           return { ...state }
   }

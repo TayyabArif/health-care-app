@@ -39,7 +39,7 @@ const LabTestDropDown = () => {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "10vw" }}>
-        <InputLabel id="demo-simple-select-standard-label">Lab Test</InputLabel>
+        <InputLabel id="demo-simple-select-standard-label" sx={{color: 'primary.main'}}>Lab Test</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"

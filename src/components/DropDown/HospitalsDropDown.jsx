@@ -17,7 +17,7 @@ const HospitalsDropDown = () => {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: "10vw" }}>
-        <InputLabel id="demo-simple-select-standard-label">Hospitals</InputLabel>
+        <InputLabel id="demo-simple-select-standard-label" sx={{color: 'primary.main'}}>Hospitals</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
@@ -34,7 +34,6 @@ const HospitalsDropDown = () => {
               fontWeight = 'bold'
               color='primary.main'
               sx={{pl: '15px', mb: '15px'}}
-
               >
               Hospitals in Lahore
               </Typography>

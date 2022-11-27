@@ -23,6 +23,12 @@ import HospitalsDropDown from './DropDown/HospitalsDropDown';
 import ConsultDropDown from './DropDown/ConsultDropDown';
 import LabTestDropDown from './DropDown/LabTestDropDown';
 import PhoneModal from './PhoneModal';
+import logo from '../assests/launch_screen.svg'
+import styled from 'styled-components'
+const Image = styled.img`
+    height: 70px;
+    width: 100px;
+`
 
 const settings = ['Login'];
 const Header = () => {
@@ -56,23 +62,7 @@ const Header = () => {
     <AppBar position="static" sx={{bgcolor: 'white', py: 1}} id='header'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              fontStyle: 'italic',
-              textDecoration: 'none',
-              color: 'primary.main'
-            }}
-          >
-            Health Care
-          </Typography>
+          <Image src= {logo} />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -104,10 +94,10 @@ const Header = () => {
           >
             Health Care
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: '10px' }}>
             <Button
               onClick={() => navigate('/')}
-              sx={{ my: 2, color: 'black', display: 'block' }}
+              sx={{ my: 2, color: 'primary.main', display: 'block' }}
             >
               Home
             </Button>
@@ -117,13 +107,13 @@ const Header = () => {
             <LabTestDropDown />
             <Button
               onClick={() => navigate('/surgeries')}
-              sx={{ my: 2, color: 'black', display: 'block' }}
+              sx={{ mt: 2, color: 'primary.main', display: 'block' }}
             >
               Surgeries
             </Button>
             <Button
               onClick={() => navigate('/offers')}
-              sx={{ my: 2, color: 'black', display: 'block' }}
+              sx={{ mt: 2, color: 'primary.main', display: 'block' }}
             >
               Special Offers
             </Button>
@@ -132,14 +122,6 @@ const Header = () => {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Grid container direction="row" justifyContent="space-between" sx={{ width: "100%" }} alignItems="center">
-                {/* <Button
-                  variant= 'contained'
-                  sx={{ my: 2, color: 'black', display: 'block', backgroundColor: 'danger.main',
-                  mx: 1, fontSize: '0.5px', borderRadius: '5px', color: 'white' }}
-                  size= 'small'
-                >
-                  <PhoneIcon />
-                </Button> */}
                 <PhoneModal />
               <Grid item>
                 <Tooltip title="Open settings">

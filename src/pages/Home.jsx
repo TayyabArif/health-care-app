@@ -118,7 +118,7 @@ function Home() {
             variant="h2"
             style={{ fontSize: "1.125rem", color: "rgb(55 63 80)" }}
           >
-            1 Million + Patients Found Doctor Through Marham
+            1 Million + Patients Found Doctor Through Health Care
           </Typography>
         </Box>
         <Grid
@@ -714,7 +714,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Coronavirus
             </Typography>
           </Box>
           <Box
@@ -769,7 +769,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Diabetes
             </Typography>
           </Box>
           <Box
@@ -819,7 +819,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Bawaseer
             </Typography>
           </Box>
           <Box
@@ -922,7 +922,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Typhoid Fever
             </Typography>
           </Box>
           <Box
@@ -982,7 +982,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              High Blood Pressure
             </Typography>
           </Box>
           <Box
@@ -1032,7 +1032,7 @@ function Home() {
                 marginTop: "0.5rem",
               }}
             >
-              Dermatologist
+              Cancer
             </Typography>
           </Box>
         </Box>
