@@ -3,7 +3,7 @@ import { actionTypes } from "../../constants/action-type";
 export const askQestion = (data) => {
   return async function (dispatch) {
       try {
-          const response = await fetch(`${process.env.REACT_APP_BASE_URL}/createQuestion?title=${data.title}&question=${data.question}&patientAbout=${data.patientAbout}&location=${data.location}`, {
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}/createQuestion?title=${data.title}&question=${data.question}&patientAbout=${data.patientAbout}&location=${data.location}&date=${data.date}`, {
               method: 'POST',
               headers: {
                   'Content-type': 'application/json',

@@ -41,7 +41,7 @@ const QuestionCard = ({question}) => {
           fontSize = '1rem'
           fontFamily = 'Consolas'
           >
-          6 hours ago
+          {question.date}
         </Typography>
       </Grid>
       <Grid  container item sx={{width: "100%", pb: '10px'}} justifyContent= 'center'>

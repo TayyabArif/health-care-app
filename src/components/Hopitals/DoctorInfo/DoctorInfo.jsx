@@ -32,22 +32,22 @@ const DoctorlInfo = ({data}) => {
             justifyContent="center"
             alignItems="center"
           >
-            <Image src={data.image} />
+            <Image src={data?.image} />
           </Grid>
           <Grid container item direction="column" sx={{ width: "60%", ml: 3 }}>
-            <Link href="#">{data.name}</Link>
+            <Link href="#">{data?.name}</Link>
             <Typography
               fontSize="1rem"
 
               sx={{ width: "90%", pt: 1 }}
             >
-              {data.speciality}
+              {data?.speciality}
             </Typography>
             <Typography
               fontSize="0.8rem"
               sx={{ width: "90%", pt: 1 }}
             >
-              {data.degree}
+              {data?.degree}
             </Typography>
             <Grid container item sx={{ width: "90%", mb: 2, mt: 1 }}>
               <Grid
@@ -69,7 +69,7 @@ const DoctorlInfo = ({data}) => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  {data.review}+
+                  {data?.review}+
                 </Typography>
               </Grid>
               <Divider
@@ -96,7 +96,7 @@ const DoctorlInfo = ({data}) => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  {data.waitingTime}years
+                  {data?.waitingTime}years
                 </Typography>
               </Grid>
               <Divider
@@ -124,7 +124,7 @@ const DoctorlInfo = ({data}) => {
                   fontWeight="bold"
                   sx={{ width: "90%" }}
                 >
-                  {data.patientSatisfy}%
+                  {data?.patientSatisfy}%
                 </Typography>
               </Grid>
             </Grid>
@@ -160,8 +160,8 @@ const DoctorlInfo = ({data}) => {
           fontSize="0.9rem"
           sx={{ width: "90%", p:1 }}
         >
-          {data.name} - {data.speciality}, Lahore -
-          Appointment Detail{data.name} is a {data.desig}... <Link underline="none" href="#">
+          {data?.name} - {data?.speciality}, Lahore -
+          Appointment Detail{data?.name} is a {data?.desig}... <Link underline="none" href="#">
           Read More
           </Link>
         </Typography>
@@ -170,12 +170,12 @@ const DoctorlInfo = ({data}) => {
         container
         item
         sx={{ width: "99%", height: "15%", bgcolor: "white", bgcolor: 'white', pt: 2, flexWrap: 'wrap' }}>
-          <DoctorInfoCard title={data.hospital[0]?.name} available='Today' timing={data.hospital[0]?.timing} price= {data.hospital[0]?.price} id={1}/>
-          {data.hospital[1] &&
-          <DoctorInfoCard title= {data.hospital[1]?.name} available={data.hospital[1]?.wDays} timing={data.hospital[1]?.timing} price={data.hospital[1]?.price} id={2}/>
+          <DoctorInfoCard title={data?.hospital[0]?.name} available='Today' timing={data?.hospital[0]?.timing} price= {data?.hospital[0]?.price} id={1}/>
+          {data?.hospital[1] &&
+          <DoctorInfoCard title= {data?.hospital[1]?.name} available={data?.hospital[1]?.wDays} timing={data?.hospital[1]?.timing} price={data?.hospital[1]?.price} id={2}/>
           }
-          {data.hospital[2] &&
-           <DoctorInfoCard title= {data.hospital[2]?.name} available={data.hospital[2]?.wDays} timing={data.hospital[2]?.timing} price={data.hospital[2]?.price} id={3}/>
+          {data?.hospital[2] &&
+           <DoctorInfoCard title= {data?.hospital[2]?.name} available={data?.hospital[2]?.wDays} timing={data?.hospital[2]?.timing} price={data?.hospital[2]?.price} id={3}/>
           }
       </Grid>
     </Grid>
