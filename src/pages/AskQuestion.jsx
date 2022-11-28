@@ -43,11 +43,13 @@ const AskQuestions = () => {
     else{
     let askValue = asking.concat(",",gender)
     askValue = askValue.concat(" ", age)
+    let date = new Date().toLocaleDateString("de-DE");
     const myForm={
       title: problem,
       patientAbout: askValue,
       location,
-      question: description
+      question: description,
+      date: date
     }
     dispatch(askQestion(myForm))
     form.current.reset();
@@ -69,7 +71,7 @@ const AskQuestions = () => {
   useEffect(() => {
     if( isAsked )
     {
-      navigate('/forum')
+      // navigate('/forum')
     }
   }, [isAsked])
   return (
