@@ -44,7 +44,6 @@ const DoctorsDropDown = () => {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value= {doctor}
           ref={ref}
           label='Doctors'
           disableUnderline = {true}

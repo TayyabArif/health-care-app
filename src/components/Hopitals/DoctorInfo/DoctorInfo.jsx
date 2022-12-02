@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Divider from "@mui/material/Divider";
 import DoctorInfoCard from "./DoctorInfoCard";
 import AppointmentModal from "../../AppointmentModal";
+import VideoAppointmentModal from "../../VideoAppointmentModel";
 
 const Image = styled.img`
   height: 90px;
@@ -136,12 +137,14 @@ const DoctorlInfo = ({data}) => {
           direction="column"
           sx={{ width: "35%", pl: 15, pr: 2 }}
         >
-          <Button
+          {/* <Button
             variant="contained"
             sx={{ mt: 2, color: "white", backgroundColor: "danger.main" }}
           >
             Video Consultation
-          </Button>
+          </Button> */}
+          <VideoAppointmentModal src={data?.image} name={data?.name}/>
+
           {/* <Button
             variant="contained"
             sx={{ mt: 2, color: "white", backgroundColor: "primary.main" }}
