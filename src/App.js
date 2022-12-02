@@ -17,6 +17,7 @@ import SignUp from './pages/SignUp';
 import Questions from './pages/Questions';
 import AskQuestions from './pages/AskQuestion';
 import Question from './components/Question';
+import Payment from './pages/Payment';
 
 function App() {
   return (
@@ -121,6 +122,12 @@ function App() {
             </Main>
           }
         />
+        <Route path="payment"
+          element={
+            <Main>
+              <Payment />
+            </Main>
+          }/>
       </Routes>
     </ThemeProvider>
   );

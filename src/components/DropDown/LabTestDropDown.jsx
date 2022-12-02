@@ -37,7 +37,7 @@ const LabTestDropDown = () => {
     navigate(`/lab%20test/${event}`, { state: {name: 'Lab name', data: event, lab: name} })
 };
   return (
-    <div>
+    <Grid >
       <FormControl variant="standard" sx={{ m: 1, minWidth: "10vw" }}>
         <InputLabel id="demo-simple-select-standard-label" sx={{color: 'primary.main'}}>Lab Test</InputLabel>
         <Select
@@ -45,7 +45,6 @@ const LabTestDropDown = () => {
           id="demo-simple-select-standard"
           value= {test}
           onChange={handleChange}
-          label='Lab Test'
           disableUnderline = {true}
           sx={{border: "none"}}
         >
@@ -85,7 +84,7 @@ const LabTestDropDown = () => {
           </Grid>
         </Select>
       </FormControl>
-    </div>
+    </Grid>
   )
 }
 

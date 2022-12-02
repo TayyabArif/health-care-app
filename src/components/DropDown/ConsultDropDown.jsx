@@ -19,9 +19,7 @@ const ConsultDropDown = () => {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value='Consult Online'
           onChange={handleChange}
-          label='Consult Online'
           disableUnderline = {true}
           sx={{border: "none"}}
         >

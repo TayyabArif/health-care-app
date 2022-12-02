@@ -97,7 +97,7 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: '10px' }}>
             <Button
               onClick={() => navigate('/')}
-              sx={{ my: 2, color: 'primary.main', display: 'block' }}
+              sx={{ my: 2,mt: '1.3rem', color: 'primary.main', display: 'block' }}
             >
               Home
             </Button>

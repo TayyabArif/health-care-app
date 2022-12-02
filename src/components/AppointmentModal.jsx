@@ -27,12 +27,6 @@ export default function TransitionsModal({ name }) {
 
     return (
         <div>
-        {/* <Button
-            variant="outlined"
-            sx={{width : '100%', color: 'danger.main', borderColor: 'danger.main'}}
-            onClick={handleOpen}>
-            {name}
-        </Button> */}
         <Button
             variant="contained"
             sx={{ width: '100%', mt: 2, color: "white", backgroundColor: "primary.main" }}
