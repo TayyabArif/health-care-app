@@ -8,19 +8,20 @@ export const Signup = (data) => {
               headers: {
                   'Content-type': 'application/json',
                   'Accept': 'application/json',
-              },
+                },
           });
           const result = await response.json()
           if (response.status >= 200 && response.status < 400) {
-            dispatch({ type: actionTypes.SIGNUP, payload: result })
+              localStorage.setItem('Type', result.type)
+              dispatch({ type: actionTypes.SIGNUP, payload: result })
           }
           else {
               console.log('You are not authorized')
               dispatch({ type: actionTypes.SIGNUP_ERR })
           }
-      } catch (err) {
-          debugger
-      }
+        } catch (err) {
+            console.log('error')
+        }
   }
 }
 
@@ -45,7 +46,7 @@ export const Login = (data) => {
                 dispatch({ type: actionTypes.LOGIN_ERR })
             }
         } catch (err) {
-            debugger
+            console.log('error')
         }
     }
   }

@@ -19,7 +19,7 @@ export const Doctors_Speciality_List = (data) => {
               dispatch({ type: actionTypes.GET_DOCTORS_ERR })
           }
       } catch (err) {
-          debugger
+          console.log('error')
       }
   }
 }
@@ -43,7 +43,7 @@ export const Doctors_Disease_List = (data) => {
                 dispatch({ type: actionTypes.GET_DOCTORS_ERR })
             }
         } catch (err) {
-            debugger
+            console.log('error')
         }
     }
   }

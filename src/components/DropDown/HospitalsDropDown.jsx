@@ -14,7 +14,6 @@ const HospitalsDropDown = () => {
   const [hospital, setHospital] = useState('')
   const handleChange = (event) => {
     navigate(`/hospital/${event}`)
-    debugger
   };
   return (
     <Grid >
