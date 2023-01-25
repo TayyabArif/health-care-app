@@ -20,7 +20,7 @@ export const cityLabTests = (data) => {
               dispatch({ type: actionTypes.GET_LAB_TEST_CITY_ERR })
           }
       } catch (err) {
-          debugger
+          console.log('error')
       }
   }
 }
@@ -46,7 +46,7 @@ export const labTests = (data) => {
               dispatch({ type: actionTypes.GET_LAB_TEST_NAME_ERR})
           }
       } catch (err) {
-          debugger
+        console.log('error')
       }
   }
 }
@@ -72,7 +72,7 @@ export const addTest = (data) => {
                 dispatch({ type: actionTypes.POST_TEST_ERR})
             }
         } catch (err) {
-            debugger
+            console.log('error')
         }
     }
   }

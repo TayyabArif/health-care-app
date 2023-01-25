@@ -42,7 +42,7 @@ export const allSpecialities = () => {
                 dispatch({ type: actionTypes.ALL_SPECIALISTS_ERR })
             }
         } catch (err) {
-            debugger
+            console.log('error')
         }
     }
   }
